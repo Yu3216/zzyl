@@ -19,7 +19,7 @@ public class NursingPlan extends BaseEntity
     private Long id;
 
     /** 排序号 */
-    private Long sortNo;
+    private Integer sortNo;
 
     /** 名称 */
     @Excel(name = "名称")
@@ -38,15 +38,17 @@ public class NursingPlan extends BaseEntity
     {
         return id;
     }
-    public void setSortNo(Long sortNo) 
+
+    public void setSortNo(Integer sortNo) 
     {
         this.sortNo = sortNo;
     }
 
-    public Long getSortNo() 
+    public Integer getSortNo() 
     {
         return sortNo;
     }
+
     public void setPlanName(String planName) 
     {
         this.planName = planName;
@@ -56,6 +58,7 @@ public class NursingPlan extends BaseEntity
     {
         return planName;
     }
+
     public void setStatus(Long status) 
     {
         this.status = status;

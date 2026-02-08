@@ -220,7 +220,6 @@
         <module>zzyl-generator</module>
         <module>zzyl-common</module>
         <module>zzyl-nursing-platform</module>
-        <module>zzyl-nursing-platform</module>
     </modules>
     <packaging>pom</packaging>
 

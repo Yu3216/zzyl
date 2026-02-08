@@ -6,7 +6,7 @@ import com.zzyl.nursing.domain.NursingLevel;
 /**
  * 护理等级Mapper接口
  * 
- * @author ruoyi
+ * @author hansheep
  * @date 2026-02-08
  */
 public interface NursingLevelMapper 

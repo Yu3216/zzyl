@@ -8,8 +8,8 @@ import com.zzyl.nursing.domain.NursingProject;
 /**
  * 护理项目Service接口
  * 
- * @author Yu
- * @date 2026-02-07
+ * @author hansheep
+ * @date 2026-02-08
  */
 public interface INursingProjectService extends IService<NursingProject>
 {

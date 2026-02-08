@@ -28,7 +28,7 @@ import java.util.Arrays;
  * @date ${datetime}
  */
 @Service
-public class ${ClassName}ServiceImpl extends ServiceImp<${ClassName}Mapper,${ClassName}> implements I${ClassName}Service
+public class ${ClassName}ServiceImpl extends ServiceImpl<${ClassName}Mapper,${ClassName}> implements I${ClassName}Service
 {
     @Autowired
     private ${ClassName}Mapper ${className}Mapper;
@@ -55,7 +55,7 @@ public class ${ClassName}ServiceImpl extends ServiceImp<${ClassName}Mapper,${Cla
     public List<${ClassName}> select${ClassName}List(${ClassName} ${className})
     {
 ##        return ${className}Mapper.select${ClassName}List(${className});
-        return getById(${className});
+        return getById(${pkColumn.javaField});
     }
 
     /**
