@@ -1,6 +1,9 @@
 package com.zzyl.nursing.domain;
 
 import java.math.BigDecimal;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import com.zzyl.common.annotation.Excel;
@@ -12,11 +15,13 @@ import com.zzyl.common.core.domain.BaseEntity;
  * @author Yu
  * @date 2026-02-07
  */
+@ApiModel("护理项目实体")
 public class NursingProject extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
     /** 编号 */
+    @ApiModelProperty("护理项目编号")
     private Long id;
 
     /** 名称 */

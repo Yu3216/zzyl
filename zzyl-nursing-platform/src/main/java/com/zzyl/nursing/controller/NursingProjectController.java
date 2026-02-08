@@ -2,6 +2,10 @@ package com.zzyl.nursing.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +31,7 @@ import com.zzyl.common.core.page.TableDataInfo;
  * @author Yu
  * @date 2026-02-07
  */
+@Api(tags = "护理项目管理")
 @RestController
 @RequestMapping("/nursing/project")
 public class NursingProjectController extends BaseController
@@ -37,6 +42,7 @@ public class NursingProjectController extends BaseController
     /**
      * 查询护理项目列表
      */
+    @ApiOperation("查询护理项目列表")
     @PreAuthorize("@ss.hasPermi('nursing:project:list')")
     @GetMapping("/list")
     public TableDataInfo list(NursingProject nursingProject)
@@ -49,6 +55,7 @@ public class NursingProjectController extends BaseController
     /**
      * 导出护理项目列表
      */
+    @ApiOperation("导出护理项目列表")
     @PreAuthorize("@ss.hasPermi('nursing:project:export')")
     @Log(title = "护理项目", businessType = BusinessType.EXPORT)
     @PostMapping("/export")
@@ -62,6 +69,7 @@ public class NursingProjectController extends BaseController
     /**
      * 获取护理项目详细信息
      */
+    @ApiOperation("获取护理项目详细信息")
     @PreAuthorize("@ss.hasPermi('nursing:project:query')")
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)
@@ -72,6 +80,7 @@ public class NursingProjectController extends BaseController
     /**
      * 新增护理项目
      */
+    @ApiOperation("新增护理项目")
     @PreAuthorize("@ss.hasPermi('nursing:project:add')")
     @Log(title = "护理项目", businessType = BusinessType.INSERT)
     @PostMapping
@@ -83,6 +92,7 @@ public class NursingProjectController extends BaseController
     /**
      * 修改护理项目
      */
+    @ApiOperation("修改护理项目")
     @PreAuthorize("@ss.hasPermi('nursing:project:edit')")
     @Log(title = "护理项目", businessType = BusinessType.UPDATE)
     @PutMapping
@@ -94,10 +104,11 @@ public class NursingProjectController extends BaseController
     /**
      * 删除护理项目
      */
+    @ApiOperation("删除护理项目")
     @PreAuthorize("@ss.hasPermi('nursing:project:remove')")
     @Log(title = "护理项目", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")
-    public AjaxResult remove(@PathVariable Long[] ids)
+    public AjaxResult remove(@ApiParam("护理项目ID数组") @PathVariable Long[] ids)
     {
         return toAjax(nursingProjectService.deleteNursingProjectByIds(ids));
     }
