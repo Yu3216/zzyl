@@ -11,7 +11,7 @@ import com.zzyl.common.core.domain.BaseEntity;
 
 /**
  * 菜单权限表 sys_menu
- * 
+ *
  * @author ruoyi
  */
 public class SysMenu extends BaseEntity
@@ -264,11 +264,7 @@ public class SysMenu extends BaseEntity
             .append("status ", getStatus())
             .append("perms", getPerms())
             .append("icon", getIcon())
-            .append("createBy", getCreateBy())
-            .append("createTime", getCreateTime())
-            .append("updateBy", getUpdateBy())
-            .append("updateTime", getUpdateTime())
-            .append("remark", getRemark())
+            
             .toString();
     }
 }
